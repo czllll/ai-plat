@@ -12,10 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import {
-  ChatCompletion,
-  ChatCompletionMessageParam,
-} from "openai/resources/index.mjs";
 import { Empty } from "@/components/empty";
 import { Loader } from "@/components/loader";
 
@@ -41,7 +37,7 @@ const MusicPage = () => {
       setMusic(response.data.audio);
 
       form.reset();
-    } catch (error: any) {
+    } catch (error: unknown) {
       //open pro modal
       console.log(error);
     } finally {

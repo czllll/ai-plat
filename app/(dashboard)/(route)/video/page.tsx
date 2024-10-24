@@ -33,7 +33,6 @@ const VideoPage = () => {
       setVideo(undefined);
 
       const response = await axios.post("/api/video", values);
-
       setVideo(response.data[0]);
 
       form.reset();
@@ -52,6 +51,7 @@ const VideoPage = () => {
         description="Turn your prompt into video."
         icon={VideoIcon}
         iconColor="text-orange-700"
+        bgColor="bg-orange-700/10"
       />
       <div className="px-4 lg:px-8">
         <div>
@@ -109,7 +109,7 @@ const VideoPage = () => {
               className="w-full aspect-video mt-8 rounded-lg border bg-black"
               controls
             >
-              <source src="https://replicate.delivery/yhqm/W43HiDVQPxrDGxNObaFEO3jkwaM1TYFzDpSOQZDjKce3A70JA/output-0.mp4" />
+              <source src={video} />
             </video>
           )}
         </div>
